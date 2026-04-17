@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,12 +17,25 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Services', href: '#services' },
-    { name: 'Experience', href: '#experience' },
+    { name: 'Home', href: 'home' },
+    { name: 'About', href: 'about' },
+    { name: 'Projects', href: 'projects' },
+    { name: 'Services', href: 'services' },
+    { name: 'Experience', href: 'experience' },
   ];
+
+  const handleNavClick = (id: string) => {
+    setIsMobileMenuOpen(false);
+    if (location.pathname === '/') {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If not on home page, we'll navigate home and then need to scroll
+      // Simple way: navigate to root. For complex apps use HashLink.
+    }
+  };
 
   return (
     <header
@@ -37,27 +52,37 @@ export default function Navbar() {
           }`}
         >
           {/* Logo */}
-          <a href="#home" className="group flex items-center gap-2">
+          <Link to="/" className="group flex items-center gap-2">
             <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-black font-bold text-sm transition-transform group-hover:rotate-12">
               M
             </div>
             <span className="text-[18px] font-mono font-bold text-foreground tracking-tighter">
               MIQDAAD<span className="text-accent">.</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             <ul className="flex items-center bg-card-alt/30 rounded-full px-2 py-1 border border-card-border/50">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="relative px-4 py-2 text-[11px] uppercase tracking-[1px] text-muted hover:text-foreground transition-colors group"
-                  >
-                    {link.name}
-                    <span className="absolute bottom-1 left-4 right-4 h-[1px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                  </a>
+                  {location.pathname === '/' ? (
+                    <button
+                      onClick={() => handleNavClick(link.href)}
+                      className="relative px-4 py-2 text-[11px] uppercase tracking-[1px] text-muted hover:text-foreground transition-colors group"
+                    >
+                      {link.name}
+                      <span className="absolute bottom-1 left-4 right-4 h-[1px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                    </button>
+                  ) : (
+                    <Link
+                      to={`/#${link.href}`}
+                      className="relative px-4 py-2 text-[11px] uppercase tracking-[1px] text-muted hover:text-foreground transition-colors group"
+                    >
+                      {link.name}
+                      <span className="absolute bottom-1 left-4 right-4 h-[1px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -65,13 +90,23 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <a 
-              href="#contact" 
-              className="flex items-center gap-2 px-5 py-2.5 bg-accent text-black text-[11px] font-bold uppercase tracking-[1px] rounded-full hover:opacity-80 transition-all hover:scale-105 active:scale-95"
-            >
-              Let's Talk
-              <ArrowUpRight size={14} />
-            </a>
+            {location.pathname === '/' ? (
+              <button 
+                onClick={() => handleNavClick('contact')}
+                className="flex items-center gap-2 px-5 py-2.5 bg-accent text-black text-[11px] font-bold uppercase tracking-[1px] rounded-full hover:opacity-80 transition-all hover:scale-105 active:scale-95"
+              >
+                Let's Talk
+                <ArrowUpRight size={14} />
+              </button>
+            ) : (
+              <Link
+                to="/#contact"
+                className="flex items-center gap-2 px-5 py-2.5 bg-accent text-black text-[11px] font-bold uppercase tracking-[1px] rounded-full hover:opacity-80 transition-all hover:scale-105 active:scale-95"
+              >
+                Let's Talk
+                <ArrowUpRight size={14} />
+              </Link>
+            )}
           </div>
 
           {/* Mobile Toggle */}
@@ -100,25 +135,44 @@ export default function Navbar() {
               <ul className="flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-[14px] uppercase tracking-[2px] text-muted hover:text-accent transition-colors flex items-center justify-between group"
-                    >
-                      {link.name}
-                      <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </a>
+                    {location.pathname === '/' ? (
+                      <button
+                        onClick={() => handleNavClick(link.href)}
+                        className="w-full text-left text-[14px] uppercase tracking-[2px] text-muted hover:text-accent transition-colors flex items-center justify-between group"
+                      >
+                        {link.name}
+                        <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </button>
+                    ) : (
+                      <Link
+                        to={`/#${link.href}`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-[14px] uppercase tracking-[2px] text-muted hover:text-accent transition-colors flex items-center justify-between group"
+                      >
+                        {link.name}
+                        <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
               <div className="pt-6 border-t border-card-border">
-                <a 
-                  href="#contact" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 py-4 bg-accent text-black text-[12px] font-bold uppercase tracking-[2px] rounded-2xl"
-                >
-                  Contact Me
-                </a>
+                {location.pathname === '/' ? (
+                  <button 
+                    onClick={() => handleNavClick('contact')}
+                    className="w-full flex items-center justify-center gap-2 py-4 bg-accent text-black text-[12px] font-bold uppercase tracking-[2px] rounded-2xl"
+                  >
+                    Contact Me
+                  </button>
+                ) : (
+                  <Link 
+                    to="/#contact" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="w-full flex items-center justify-center gap-2 py-4 bg-accent text-black text-[12px] font-bold uppercase tracking-[2px] rounded-2xl"
+                  >
+                    Contact Me
+                  </Link>
+                )}
               </div>
             </div>
           </motion.div>

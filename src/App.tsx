@@ -3,29 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Services from './components/Services';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
+import Home from './pages/Home';
+import CaseStudy from './pages/CaseStudy';
 import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-accent/30 selection:text-accent">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Services />
-        <Experience />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-background text-foreground selection:bg-accent/30 selection:text-accent">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/case-study/:id" element={<CaseStudy />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
