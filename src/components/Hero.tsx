@@ -53,7 +53,6 @@ export default function Hero() {
             className="relative hidden lg:block max-w-[450px] ml-auto"
           >
             <div className="aspect-square rounded-full bg-card border border-card-border relative overflow-hidden shadow-2xl shadow-black/50">
-              {/* Profile picture */}
               <img 
                 src={myDp} 
                 alt="MIQDAAD" 
@@ -63,11 +62,10 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </div>
             
-            {/* Floating badge */}
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute bottom-8 -left-8 bg-card border border-card-border p-4 rounded-2xl shadow-xl backdrop-blur-sm z-20"
+              className="absolute bottom-8 -left-8 bg-card border border-card-border p-4 rounded-2xl shadow-xl backdrop-blur-sm z-20 pointer-events-auto"
             >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center text-accent">

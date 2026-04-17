@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import myDp from './My dp.jpeg';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,14 +28,30 @@ export default function Navbar() {
 
   const handleNavClick = (id: string) => {
     setIsMobileMenuOpen(false);
+    
     if (location.pathname === '/') {
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        // Use a small timeout for mobile to ensure menu closing transition doesn't interfere
+        setTimeout(() => {
+          const navHeight = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }, 100);
       }
     } else {
-      // If not on home page, we'll navigate home and then need to scroll
-      // Simple way: navigate to root. For complex apps use HashLink.
+      // If not on home page, we navigate home and set a flag to scroll to the project or section
+      if (id === 'projects') {
+        window.sessionStorage.setItem('scroll-to-projects', 'true');
+      } else {
+        window.sessionStorage.setItem('scroll-to-section', id);
+      }
+      navigate('/');
     }
   };
 
@@ -62,7 +80,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1">
             <ul className="flex items-center bg-card-alt/30 rounded-full px-2 py-1 border border-card-border/50">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -89,7 +107,7 @@ export default function Navbar() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             {location.pathname === '/' ? (
               <button 
                 onClick={() => handleNavClick('contact')}
@@ -110,7 +128,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Toggle */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 text-foreground hover:text-accent transition-colors"
@@ -129,50 +147,40 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="absolute top-full left-6 right-6 mt-4 bg-card border border-card-border rounded-3xl overflow-hidden md:hidden shadow-2xl z-40"
+            className="absolute top-full left-6 right-6 mt-4 bg-card border border-card-border rounded-3xl overflow-hidden lg:hidden shadow-2xl z-40 pointer-events-auto"
           >
             <div className="p-8 flex flex-col gap-6">
+              {/* Profile image in menu */}
+              <div className="flex items-center gap-4 p-4 bg-card-alt rounded-2xl border border-card-border">
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                  <img src={myDp} alt="Miqdaad" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                </div>
+                <div>
+                  <p className="font-bold text-foreground">Miqdaad</p>
+                  <p className="text-[10px] uppercase tracking-wider text-accent font-mono">Available for Work</p>
+                </div>
+              </div>
+
               <ul className="flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <li key={link.name}>
-                    {location.pathname === '/' ? (
-                      <button
-                        onClick={() => handleNavClick(link.href)}
-                        className="w-full text-left text-[14px] uppercase tracking-[2px] text-muted hover:text-accent transition-colors flex items-center justify-between group"
-                      >
-                        {link.name}
-                        <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </button>
-                    ) : (
-                      <Link
-                        to={`/#${link.href}`}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-[14px] uppercase tracking-[2px] text-muted hover:text-accent transition-colors flex items-center justify-between group"
-                      >
-                        {link.name}
-                        <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </Link>
-                    )}
+                    <button
+                      onClick={() => handleNavClick(link.href)}
+                      className="w-full text-left text-[14px] uppercase tracking-[2px] text-muted hover:text-accent transition-colors flex items-center justify-between group"
+                    >
+                      {link.name}
+                      <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </button>
                   </li>
                 ))}
               </ul>
               <div className="pt-6 border-t border-card-border">
-                {location.pathname === '/' ? (
-                  <button 
-                    onClick={() => handleNavClick('contact')}
-                    className="w-full flex items-center justify-center gap-2 py-4 bg-accent text-black text-[12px] font-bold uppercase tracking-[2px] rounded-2xl"
-                  >
-                    Contact Me
-                  </button>
-                ) : (
-                  <Link 
-                    to="/#contact" 
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-full flex items-center justify-center gap-2 py-4 bg-accent text-black text-[12px] font-bold uppercase tracking-[2px] rounded-2xl"
-                  >
-                    Contact Me
-                  </Link>
-                )}
+                <button 
+                  onClick={() => handleNavClick('contact')}
+                  className="w-full flex items-center justify-center gap-2 py-4 bg-accent text-black text-[12px] font-bold uppercase tracking-[2px] rounded-2xl"
+                >
+                  Contact Me
+                </button>
               </div>
             </div>
           </motion.div>

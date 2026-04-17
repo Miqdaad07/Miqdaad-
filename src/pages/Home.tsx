@@ -8,14 +8,27 @@ import Contact from '../components/Contact';
 
 export default function Home() {
   useEffect(() => {
-    // Check if we should scroll to projects
-    const shouldScroll = window.sessionStorage.getItem('scroll-to-projects');
-    if (shouldScroll === 'true') {
+    // Check if we should scroll to a specific section
+    const shouldScrollProjects = window.sessionStorage.getItem('scroll-to-projects');
+    const targetSection = window.sessionStorage.getItem('scroll-to-section');
+    
+    const targetId = shouldScrollProjects === 'true' ? 'projects' : targetSection;
+    
+    if (targetId) {
       window.sessionStorage.removeItem('scroll-to-projects');
+      window.sessionStorage.removeItem('scroll-to-section');
+      
       const timer = setTimeout(() => {
-        const element = document.getElementById('projects');
+        const element = document.getElementById(targetId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const navHeight = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
       }, 100);
       return () => clearTimeout(timer);
