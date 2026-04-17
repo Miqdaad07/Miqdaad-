@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Download } from 'lucide-react';
-import myDp from './My dp.jpeg';
 
 export default function Hero() {
   return (
@@ -54,7 +53,7 @@ export default function Hero() {
           >
             <div className="aspect-square rounded-full bg-card border border-card-border relative overflow-hidden shadow-2xl shadow-black/50">
               <img 
-                src={myDp} 
+                src="/images/profile.jpeg" 
                 alt="MIQDAAD" 
                 className="w-full h-full object-cover opacity-90"
                 referrerPolicy="no-referrer"

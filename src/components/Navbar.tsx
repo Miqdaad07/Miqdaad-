@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import myDp from './My dp.jpeg';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -153,7 +152,7 @@ export default function Navbar() {
               {/* Profile image in menu */}
               <div className="flex items-center gap-4 p-4 bg-card-alt rounded-2xl border border-card-border">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                  <img src={myDp} alt="Miqdaad" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img src="/images/profile.jpeg" alt="Miqdaad" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <div>
                   <p className="font-bold text-foreground">Miqdaad</p>

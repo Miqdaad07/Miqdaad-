@@ -1,8 +1,3 @@
-import quranImage from '../components/imagge.png';
-import asfImage from '../components/imagge1.png';
-import fixitImage from '../components/Imagge2.png';
-import mepImage from '../components/generated.png';
-
 export interface Project {
   id: string;
   title: string;
@@ -24,7 +19,7 @@ export const projects: Project[] = [
     category: 'Software Engineering',
     description: 'An integrated web platform for a major NGO facilitating multi-sector donations and charitable activities.',
     fullDescription: 'Abdullahi Shuaib Foundation (ASF) is a sophisticated digital platform designed to streamline large-scale charitable giving. It enables donors to contribute across various sectors including health, education, and water sanitation, while providing specialized tools like a Zakat calculator for accurate philanthropy.',
-    image: asfImage,
+    image: '/images/imagge1.png',
     tags: ['React', 'Web Development', 'NGO', 'Zakat Calculator', 'FinTech', 'Tailwind CSS'],
     link: 'https://asf.org.ng',
     challenge: 'The organization required a unified system to manage diverse donation streams and provide donors with a reliable, transparent way to calculate and distribute their charity across multiple welfare sectors.',
@@ -37,7 +32,7 @@ export const projects: Project[] = [
     category: 'Electrical Design',
     description: 'Complete electrical power distribution and lighting design for a 50,000 sq ft commercial plaza.',
     fullDescription: 'This project involved the comprehensive electrical design for a large-scale commercial development. The focus was on creating a robust, scalable power network that meets international safety standards while providing flexible lighting solutions for various commercial tenants.',
-    image: mepImage,
+    image: '/images/generated.png',
     tags: ['AutoCAD', 'Revit', 'Lighting Design', 'Power Systems'],
     challenge: 'The plaza required a complex power distribution system that could handle high-load retail tenants while maintaining emergency power reliability for essential services.',
     solution: 'I implemented a redundant feeder system and optimized the lighting layout using DIALux to ensure maximum efficiency. The Revit model allowed for seamless coordination with mechanical and plumbing teams.',
@@ -49,7 +44,7 @@ export const projects: Project[] = [
     category: 'Software Engineering',
     description: 'An interactive learning platform for mastering Tajweed rules with gamification elements.',
     fullDescription: 'QuranCommand is a specialized learning management system designed to make Tajweed rules accessible and engaging for students worldwide. It bridges traditional knowledge with modern pedagogical techniques through a competitive and rewarding interface.',
-    image: quranImage,
+    image: '/images/imagge.png',
     tags: ['React', 'Firebase', 'Gamification', 'EdTech', 'Tailwind CSS'],
     link: 'https://qurancommand.com',
     challenge: 'Traditional Tajweed learning often feels disconnected or repetitive for younger students, leading to lower retention rates and slower progress.',
@@ -62,7 +57,7 @@ export const projects: Project[] = [
     category: 'Software Engineering',
     description: 'A comprehensive mobile-first web application connecting homeowners with verified service professionals for home maintenance.',
     fullDescription: 'FixIt is a sophisticated digital ecosystem facilitating home service bookings, real-time job tracking, and quality assurance. It features a multi-role architecture with dedicated interfaces for customers, technicians, and administrators, powered by a robust Supabase backend.',
-    image: fixitImage,
+    image: '/images/Imagge2.png',
     tags: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Mobile-First'],
     link: 'https://fixit-services.app',
     challenge: 'Homeowners struggle to find reliable, vetted service professionals, while technicians lack a streamlit workflow. The platform needed to bridge this gap with accountability, clear pricing, and role-based access control.',
