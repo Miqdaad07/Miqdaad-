@@ -39,13 +39,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 pointer-events-none ${
         isScrolled ? 'py-4' : 'py-8'
       }`}
     >
       <div className="container mx-auto px-6 md:px-12">
         <div 
-          className={`flex items-center justify-between transition-all duration-500 px-6 py-3 rounded-full border ${
+          className={`flex items-center justify-between transition-all duration-500 px-6 py-3 rounded-full border pointer-events-auto ${
             isScrolled 
               ? 'bg-background/60 backdrop-blur-xl border-card-border shadow-2xl shadow-black/50' 
               : 'bg-transparent border-transparent'

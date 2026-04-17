@@ -33,17 +33,17 @@ export default function CaseStudy() {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="mb-8"
+          className="mb-8 relative z-50"
         >
-          <button 
+          <Link 
+            to="/"
             onClick={() => {
               window.sessionStorage.setItem('scroll-to-projects', 'true');
-              navigate('/');
             }}
-            className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[2px] text-muted hover:text-accent transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[2px] text-muted hover:text-accent transition-colors p-2 -ml-2 active:scale-95 touch-manipulation"
           >
             <ArrowLeft size={14} /> Back to Projects
-          </button>
+          </Link>
         </motion.div>
 
         {/* Header Section */}

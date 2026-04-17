@@ -27,7 +27,6 @@ export default function Contact() {
     setStatus('loading');
 
     try {
-      // Using Web3Forms - Replace 'YOUR_ACCESS_KEY_HERE' with your actual key from web3forms.com
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -35,12 +34,14 @@ export default function Contact() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: '6baf52fc-4379-4652-a67a-08203b4027d8', // User needs to replace this
+          access_key: '6baf52fc-4379-4652-a67a-08203b4027d8',
           name: formData.name,
           email: formData.email,
-          subject: formData.subject || 'New Portfolio Message',
+          replyto: formData.email,
+          subject: `Portfolio: ${formData.subject || 'New Message'}`,
           message: formData.message,
-          from_name: 'Portfolio Contact Form'
+          from_name: 'Miqdaad Portfolio',
+          botcheck: "" // Honeypot field
         })
       });
 
@@ -173,6 +174,9 @@ export default function Contact() {
                   placeholder="Email Address"
                 />
               </div>
+
+              {/* Botcheck / Honeypot */}
+              <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
               
               <input 
                 type="text" 
