@@ -1,76 +1,117 @@
 import { motion } from 'motion/react';
-import { Zap, Code, PenTool, Cpu } from 'lucide-react';
+import { Target, Zap, Shield, HeartHandshake, Award, Cpu } from 'lucide-react';
 
 export default function About() {
-  const skills = [
-    { name: 'Electrical Design', icon: <Zap size={20} /> },
-    { name: 'AutoCAD & Revit', icon: <PenTool size={20} /> },
-    { name: 'Software Engineering', icon: <Code size={20} /> },
-    { name: 'System Architecture', icon: <Cpu size={20} /> },
+  const values = [
+    { 
+      title: 'Performance First', 
+      desc: 'We write lightweight, zero-bloat modular code. Your site loads instantaneously, directly improving SEO rankings and conversion rates.', 
+      icon: <Zap size={20} className="text-accent" /> 
+    },
+    { 
+      title: 'Bulletproof Security', 
+      desc: 'Employing advanced serverless deployment, modern TLS standards, secure API proxies, and strict database isolation practices.', 
+      icon: <Shield size={20} className="text-accent" /> 
+    },
+    { 
+      title: 'Immersive Aesthetics', 
+      desc: 'We merge high-fidelity luxury digital designs with interactive micro-details to make your brand unforgettable.', 
+      icon: <Award size={20} className="text-accent" /> 
+    },
+    { 
+      title: 'Bespoke Engineering', 
+      desc: 'No heavy themes or drag-and-drop constraints. Every asset is customized to match your business goals precisely.', 
+      icon: <Cpu size={20} className="text-accent" /> 
+    },
   ];
 
   return (
-    <section id="about" className="py-24 px-6 md:px-12 bg-card">
-      <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-16"
-        >
-          <h2 className="font-mono text-[12px] text-accent uppercase tracking-wider mb-4">About Me</h2>
-        </motion.div>
+    <section id="about" className="py-28 px-4 md:px-8 bg-[#040805] relative overflow-hidden">
+      
+      {/* Background gradients */}
+      <div className="absolute top-1/4 -left-64 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="container mx-auto max-w-6xl relative z-10">
+        
+        {/* Section Header */}
+        <div className="mb-20 max-w-xl">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full text-accent mb-4">
+            <Target size={12} className="animate-pulse" />
+            <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.15em] font-bold">About Miqdaad Labs</span>
+          </div>
+          <h2 className="text-[32px] md:text-[45px] font-display font-extrabold tracking-tight text-white leading-tight">
+            The Digital Sandbox <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-400">
+              For Groundbreaking Audits & Builds
+            </span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* Left Block - Mission & Bio */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-6 space-y-6 text-left"
           >
-            <h3 className="text-[24px] font-medium mb-6">Engineering meets Software</h3>
-            <div className="space-y-6 text-[15px] text-muted leading-[1.5]">
-              <p>
-                As a dual-disciplinary professional, I bring a unique perspective to every project. My background in Electrical Engineering ensures that I understand complex systems, safety protocols, and logical structures.
+            <div className="p-6 md:p-8 rounded-2xl bg-card border border-accent/15 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full pointer-events-none group-hover:bg-accent/10 transition-colors" />
+              <h3 className="text-[20px] md:text-[22px] font-display font-bold mb-4 text-white">Our Mission</h3>
+              <p className="text-[14px] md:text-[15px] text-muted leading-relaxed font-light">
+                At Miqdaad Labs, we believe that your website should not just be an "online business card." It is your most powerful marketing officer, your sales coordinator, and your brand's ultimate digital authority representation.
               </p>
-              <p>
-                Simultaneously, my expertise in Software Engineering allows me to build robust, scalable, and efficient digital solutions. Whether I'm designing a power distribution network for a commercial building or developing a complex backend system, my goal remains the same: creating efficient, elegant, and functional solutions.
+              <p className="text-[14px] md:text-[15px] text-muted leading-relaxed font-light mt-4">
+                We craft beautiful, lightning-speed digital systems for commercial businesses, luxury brands, and specialized foundations. By bridging strict technical engineering with premium visual designs, we help our clients dominate their markets and trigger high-volume conversions.
               </p>
-              <p>
-                I specialize in bridging the gap between physical infrastructure and digital systems, making me uniquely positioned for IoT projects, smart grid technologies, and industrial automation.
-              </p>
+            </div>
+
+            {/* Quote Badge */}
+            <div className="flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-accent/5 to-transparent border-l-4 border-accent">
+              <HeartHandshake className="text-accent flex-shrink-0" size={24} />
+              <div>
+                <p className="text-[13px] md:text-[14px] font-medium text-white italic">
+                  "We don't build generic web pages. We program highly structured digital assets that load instantaneously and drive continuous growth."
+                </p>
+                <p className="text-[10px] font-mono text-accent uppercase tracking-wider mt-2">- Miqdaad Labs Team</p>
+              </div>
             </div>
           </motion.div>
 
+          {/* Right Block - Core Values / Trust Factors */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-6 space-y-6"
           >
-            <h3 className="text-[24px] font-medium mb-6">Core Skills</h3>
+            <h3 className="text-[20px] md:text-[22px] font-display font-bold text-white text-left pl-1">
+              Why Global Brands Choose Us
+            </h3>
+            
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {skills.map((skill, index) => (
+              {values.map((val, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-card-alt border border-card-border hover:border-accent transition-colors"
+                  className="p-5 rounded-xl bg-card-alt border border-card-border hover:border-accent/30 transition-all duration-300 flex flex-col justify-between h-[190px] text-left hover:shadow-[0_4px_20px_rgba(5,219,105,0.05)]"
                 >
-                  <div className="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center">
-                    {skill.icon}
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center">
+                      {val.icon}
+                    </div>
+                    <span className="text-[14px] md:text-[15px] font-display font-bold text-white">{val.title}</span>
                   </div>
-                  <span className="text-[14px] font-medium">{skill.name}</span>
+                  <p className="text-[12px] text-muted leading-relaxed font-light mt-4">
+                    {val.desc}
+                  </p>
                 </div>
               ))}
             </div>
-
-            <div className="mt-10 p-6 rounded-xl bg-card-alt border border-card-border">
-              <h4 className="font-mono text-[12px] mb-2 text-accent uppercase tracking-wider">Highlight</h4>
-              <p className="text-[13px] text-muted leading-[1.5]">
-                Extensive experience in both residential and commercial electrical installations, ensuring compliance with NEC standards while optimizing for energy efficiency.
-              </p>
-            </div>
           </motion.div>
+          
         </div>
       </div>
     </section>

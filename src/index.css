@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Fira+Code:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-mono: "Courier New", Courier, monospace;
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "Fira Code", "Courier New", Courier, monospace;
   
   --color-background: var(--bg);
   --color-foreground: var(--fg);
@@ -17,14 +18,14 @@
 
 @layer base {
   :root, .dark {
-    --bg: #080808;
-    --fg: #ffffff;
-    --accent: #00F5FF;
-    --accent-hover: #00d4dd;
-    --card: #121212;
-    --card-alt: #1a1a1a;
-    --card-border: rgba(255, 255, 255, 0.08);
-    --muted: #a0a0a0;
+    --bg: #030604; /* Extra rich deep dark forest black */
+    --fg: #f4fbf7; /* High contrast, crisp warm off-white */
+    --accent: #05db69; /* Neon-tinted vibrant emerald green */
+    --accent-hover: #10b981; /* Premium deep emerald */
+    --card: #090e0b; /* Deep glassy obsidian green card */
+    --card-alt: #101813; /* Alert/Active card state */
+    --card-border: rgba(16, 185, 129, 0.12); /* Emerald translucent border */
+    --muted: #8e9e95; /* Sage tinted muted text */
   }
 }
 
@@ -35,10 +36,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 
 .font-mono {
@@ -49,17 +53,42 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar matching dark green theme */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
   background: var(--color-background);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-card-border);
-  border-radius: 5px;
+  background: rgba(5, 219, 105, 0.15);
+  border-radius: 9999px;
+  border: 2px solid var(--color-background);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-muted);
+  background: rgba(5, 219, 105, 0.35);
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: rgba(9, 14, 11, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(16, 24, 19, 0.8);
+  border-color: rgba(5, 219, 105, 0.3);
+  box-shadow: 0 12px 40px -12px rgba(5, 219, 105, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Selection decoration */
+::selection {
+  background: rgba(5, 219, 105, 0.25);
+  color: #ffffff;
 }

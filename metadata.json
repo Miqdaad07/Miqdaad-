@@ -1,6 +1,8 @@
 {
-  "name": "MIQDAAD | Electrical Engineer & Software Engineer Portfolio",
-  "description": "A modern, premium personal portfolio website for MIQDAAD, a professional Electrical Engineer and Software Engineer, featuring a dark theme, smooth animations, and responsive design.",
+  "name": "Miqdaad Labs | Premium Modern Web Design & Development Agency",
+  "description": "Miqdaad Labs is a premium, modern web development agency building clean, high-performance, and conversion-focused websites, custom tools, e-commerce, and bespoke web apps for global businesses.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
