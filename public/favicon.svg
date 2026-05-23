@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Glowing subtle rounded square container reflecting dark mode blueprint -->
+  <rect width="100" height="100" rx="22" fill="#020503" stroke="#05db69" stroke-width="4"/>
+  <rect x="8" y="8" width="84" height="84" rx="14" fill="none" stroke="#05db69" stroke-width="1" stroke-opacity="0.15" stroke-dasharray="3 3"/>
+  <!-- Vector paths of code brackets and monogram M matching navbar -->
+  <path d="M22,72 V28 L50,52 L78,28 V52" stroke="#05db69" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M50,52 L78,75" stroke="#05db69" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="78" cy="72" r="5" fill="#05db69" />
+</svg>

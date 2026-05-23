@@ -10,6 +10,8 @@ import Contact from '../components/Contact';
 
 export default function Home() {
   useEffect(() => {
+    document.title = 'Miqdaad Labs — Modern Web Development Agency';
+    
     // Check if we should scroll to a specific section
     const shouldScrollProjects = window.sessionStorage.getItem('scroll-to-projects');
     const targetSection = window.sessionStorage.getItem('scroll-to-section');

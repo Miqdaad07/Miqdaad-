@@ -11,7 +11,10 @@ export default function CaseStudy() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+    if (project) {
+      document.title = `${project.title} | Miqdaad Labs`;
+    }
+  }, [id, project]);
 
   if (!project) {
     return (
