@@ -15,6 +15,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'aure-wealth',
+    title: 'Aure — Premium Wealth Advisory',
+    category: 'FinTech & Wealth Management',
+    description: 'A premium wealth advisory, investment management, and high-end banking solution.',
+    fullDescription: 'Aure is an ultra-premium wealth advisory and investment management platform designed for modern high-net-worth individuals and high-end digital banking. Developed with an emphasis on minimalist prestige and flawless user flows, the storefront functions as an elegant digital private office that simplifies complex investment strategies and premium asset monitoring.',
+    image: '/images/aure.png',
+    tags: ['React', 'Next.js', 'FinTech', 'Tailwind CSS', 'Framer Motion', 'Wealth Management', 'High-End Banking'],
+    link: 'https://investment-firms.vercel.app/',
+    challenge: 'High-net-worth clients demand a digital experience that commands absolute prestige and elite trust, reflecting the meticulous detail of offline private banking while offering rapid, modern data transparency.',
+    solution: 'We engineered a dark, architectural user interface using high-contrast typography, crisp alignment grids, and butter-smooth landing transitions. Built custom aesthetic panels to represent comprehensive investment divisions elegantly.',
+    outcome: 'Successfully captured a premier editorial aesthetic, establishing a world-class digital presence that drives premium customer acquisition and reinforces corporate capability.'
+  },
+  {
     id: 'kalla-botanicals',
     title: 'KÄLLA Botanicals — Luxury Skincare Storefront',
     category: 'Luxury E-Commerce Brand',
