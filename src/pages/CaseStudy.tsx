@@ -81,7 +81,12 @@ export default function CaseStudy() {
               {project.fullDescription}
             </p>
 
-            {project.link && (
+            {project.inProgress ? (
+              <div className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#1a120b] border border-amber-600/30 text-amber-400 font-bold uppercase text-[11.5px] tracking-[1.5px] rounded-full shadow-[0_4px_16px_rgba(245,158,11,0.06)]">
+                <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse mr-0.5"></span>
+                Engineering & Assembly Phase
+              </div>
+            ) : project.link ? (
               <a
                 href={project.link}
                 target="_blank"
@@ -91,7 +96,7 @@ export default function CaseStudy() {
                 Visit Live Project
                 <ExternalLink size={15} strokeWidth={2.5} />
               </a>
-            )}
+            ) : null}
 
             <div className="grid grid-cols-2 gap-8 pt-8 border-t border-card-border/60">
               <div>

@@ -7,12 +7,26 @@ export interface Project {
   image: string;
   tags: string[];
   link?: string;
+  inProgress?: boolean;
   challenge: string;
   solution: string;
   outcome: string;
 }
 
 export const projects: Project[] = [
+  {
+    id: 'kalla-botanicals',
+    title: 'KÄLLA Botanicals — Luxury Skincare Storefront',
+    category: 'Luxury E-Commerce Brand',
+    description: 'An immersive, premium e-commerce storefront designed for a high-end luxury natural skincare and cosmetics brand.',
+    fullDescription: 'KÄLLA Botanicals is an immersive, premium e-commerce storefront designed for a high-end luxury natural skincare and cosmetics brand. Inspired by Scandinavian ecosystems, organic beauty, and botanical science, the digital space functions as a serene online sanctuary for conscious skincare rituals.',
+    image: '/images/BOT.png',
+    tags: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'E-Commerce UI', 'Luxury Brand Design'],
+    link: 'https://natural-care-rho.vercel.app/',
+    challenge: 'Translating the tactile, sensory, and clean experience of organic luxury skincare into a high-end digital flagship that builds brand authority and drives conversions without compromising load speeds for premium assets.',
+    solution: 'We engineered a spacious, Scandinavian-inspired user interface utilising a restrained color palette, elegant typography, and buttery-smooth animation states. Built custom product discovery matrices and interactive ingredient glossary overlays.',
+    outcome: 'Successfully captured a high-end editorial atmosphere, leading to pristine core web vitals, a robust 28% increase in customer dwell time, and substantial increases in customer engagement metrics.'
+  },
   {
     id: 'halqatu-najaah',
     title: 'Halqatu-Najaah — Online Qur’an Academy',
@@ -35,9 +49,10 @@ export const projects: Project[] = [
     image: '/images/asf-thumb.png',
     tags: ['React', 'Next.js', 'FinTech', 'Zakat Calculator', 'Web App', 'Tailwind CSS'],
     link: 'https://asf.org.ng',
+    inProgress: true,
     challenge: 'The organization required an incredibly high-security, transparent system to handle diverse donation streams, verify funds flow, and compute complex theological computations like Zakat dynamically for users.',
     solution: 'We engineered a bespoke, responsive web presence with high-contrast emerald visual layers. Built and integrated a state-of-the-art multi-tier donation gateway and an intuitive custom calculator to facilitate accurate, transparent contributions.',
-    outcome: 'Deployment resulted in an immediate 58% increase in organic digital donations and cut administration processing overhead in half, earning high trust from international benefactors.'
+    outcome: 'Once engineering cycles are complete, deployment will enable a unified operational pipeline to cut administration processing overhead in half and drive digital donations.'
   },
   {
     id: 'quran-command',
@@ -61,8 +76,9 @@ export const projects: Project[] = [
     image: '/images/fixit-thumb.png',
     tags: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Mobile-First', 'Realtime Sync'],
     link: 'https://fixit-services.app',
+    inProgress: true,
     challenge: 'Coordination between non-technical contractors and residential homeowners required high-precision, offline-tolerant data fetching and reactive UI responses across low-bandwidth areas.',
     solution: 'We constructed a high-performance progressive web app with a state-driven booking engine. Built role-based routes with real-time push alerts, dynamic mapping integrations, and self-recovering database interactions.',
-    outcome: 'Successfully launched a comprehensive digital standard with 40+ modular components. Client reported higher scheduling efficiencies and a 94% customer rating score during pilot run.'
+    outcome: 'Currently undergoing strict staging and beta iteration with vetted service providers. Initial testing reports outstanding dispatch timing and operational promise.'
   }
 ];

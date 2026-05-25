@@ -103,12 +103,16 @@ export default function Projects() {
                   {/* Decorative Glass Overlay */}
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-90" />
                   
-                  {/* Live tag */}
-                  {project.link && (
+                  {/* Live or In Progress tag */}
+                  {project.inProgress ? (
+                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md border border-amber-500/25 text-amber-400 font-mono text-[9px] uppercase tracking-wider flex items-center gap-1.5 shadow-xl">
+                      <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse mr-0.5"></span> Under active development
+                    </div>
+                  ) : project.link ? (
                     <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-accent/20 text-accent font-mono text-[9px] uppercase tracking-wider flex items-center gap-1.5 shadow-xl">
                       <span className="w-1.5 h-1.5 bg-accent rounded-full animate-ping"></span> Live Deployment
                     </div>
-                  )}
+                  ) : null}
                 </div>
 
                 {/* Info Text Area */}
