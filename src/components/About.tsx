@@ -69,13 +69,13 @@ export default function About() {
             </div>
 
             {/* Quote Badge */}
-            <div className="flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-accent/5 to-transparent border-l-4 border-accent">
-              <HeartHandshake className="text-accent flex-shrink-0" size={24} />
+            <div className="flex gap-4 p-5 rounded-2xl bg-card border border-card-border/60 relative overflow-hidden">
+              <HeartHandshake className="text-accent/60 flex-shrink-0 animate-pulse" size={24} />
               <div>
-                <p className="text-[13px] md:text-[14px] font-medium text-white italic">
+                <p className="text-[13px] md:text-[14px] font-medium text-white italic leading-relaxed">
                   "We don't build generic web pages. We program highly structured digital assets that load instantaneously and drive continuous growth."
                 </p>
-                <p className="text-[10px] font-mono text-accent uppercase tracking-wider mt-2">- Miqdaad Labs Team</p>
+                <p className="text-[10px] font-mono text-accent/80 uppercase tracking-widest mt-2.5">- Miqdaad Labs Team</p>
               </div>
             </div>
           </motion.div>

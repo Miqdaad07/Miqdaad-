@@ -90,71 +90,72 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="group flex flex-col justify-between bg-card rounded-3xl overflow-hidden border border-accent/15 hover:border-accent/40 shadow-[0_10px_35px_-12px_rgba(0,0,0,0.8)] hover:shadow-[0_15px_40px_-10px_rgba(5,219,105,0.06)] transition-all duration-500 h-full text-left"
+                className="group bg-card rounded-3xl overflow-hidden border border-accent/15 hover:border-accent/40 shadow-[0_10px_35px_-12px_rgba(0,0,0,0.8)] hover:shadow-[0_15px_40px_-10px_rgba(5,219,105,0.06)] transition-all duration-500 h-full text-left"
               >
-                {/* Visual Image Container with custom scale interaction */}
-                <div className="aspect-[16/10] overflow-hidden relative border-b border-card-border/50 bg-[#020503]">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                  {/* Decorative Glass Overlay */}
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-90" />
-                  
-                  {/* Live or In Progress tag */}
-                  {project.inProgress ? (
-                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md border border-amber-500/25 text-amber-400 font-mono text-[9px] uppercase tracking-wider flex items-center gap-1.5 shadow-xl">
-                      <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse mr-0.5"></span> Under active development
-                    </div>
-                  ) : project.link ? (
-                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-accent/20 text-accent font-mono text-[9px] uppercase tracking-wider flex items-center gap-1.5 shadow-xl">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full animate-ping"></span> Live Deployment
-                    </div>
-                  ) : null}
-                </div>
-
-                {/* Info Text Area */}
-                <div className="p-6 md:p-8 flex flex-col justify-between flex-grow">
-                  <div className="space-y-3.5">
-                    {/* Tags block */}
-                    <div className="flex flex-wrap gap-1.5">
-                      <span className="text-[9px] text-[#05db69] font-mono uppercase tracking-[1.5px] border border-accent/30 bg-accent/5 px-2.5 py-0.5 rounded-md">
-                        {project.category}
-                      </span>
-                    </div>
-
-                    <h3 className="text-[20px] md:text-[23px] font-display font-bold text-white group-hover:text-accent transition-colors">
-                      {project.title}
-                    </h3>
+                <Link to={`/case-study/${project.id}`} className="flex flex-col h-full justify-between">
+                  {/* Visual Image Container with custom scale interaction */}
+                  <div className="aspect-[16/10] overflow-hidden relative border-b border-card-border/50 bg-[#020503]">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                    {/* Decorative Glass Overlay */}
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-90" />
                     
-                    <p className="text-[13px] text-muted/90 leading-[1.6] font-light">
-                      {project.description}
-                    </p>
+                    {/* Live or In Progress tag */}
+                    {project.inProgress ? (
+                      <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md border border-amber-500/25 text-amber-400 font-mono text-[9px] uppercase tracking-wider flex items-center gap-1.5 shadow-xl">
+                        <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse mr-0.5"></span> Under active development
+                      </div>
+                    ) : project.link ? (
+                      <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-accent/20 text-accent font-mono text-[9px] uppercase tracking-wider flex items-center gap-1.5 shadow-xl">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full animate-ping"></span> Live Deployment
+                      </div>
+                    ) : null}
+                  </div>
 
-                    {/* Tags footer preview */}
-                    <div className="flex flex-wrap gap-1.5 pt-2">
-                      {project.tags.slice(0, 3).map((tag) => (
-                        <span key={tag} className="text-[10px] font-mono text-muted/65 bg-card-alt px-2 py-0.5 rounded border border-card-border/65">
-                          #{tag.toLowerCase()}
+                  {/* Info Text Area */}
+                  <div className="p-6 md:p-8 flex flex-col justify-between flex-grow">
+                    <div className="space-y-3.5">
+                      {/* Tags block */}
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="text-[9px] text-[#05db69] font-mono uppercase tracking-[1.5px] border border-accent/30 bg-accent/5 px-2.5 py-0.5 rounded-md">
+                          {project.category}
                         </span>
-                      ))}
+                      </div>
+
+                      <h3 className="text-[20px] md:text-[23px] font-display font-bold text-white group-hover:text-accent transition-colors">
+                        {project.title}
+                      </h3>
+                      
+                      <p className="text-[13px] text-muted/90 leading-[1.6] font-light">
+                        {project.description}
+                      </p>
+
+                      {/* Tags footer preview */}
+                      <div className="flex flex-wrap gap-1.5 pt-2">
+                        {project.tags.slice(0, 3).map((tag) => (
+                          <span key={tag} className="text-[10px] font-mono text-muted/65 bg-card-alt px-2 py-0.5 rounded border border-card-border/65">
+                            #{tag.toLowerCase()}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Action Link button */}
+                    <div className="pt-6 mt-6 border-t border-card-border/60 flex items-center justify-between">
+                      <div 
+                        className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[1.5px] text-foreground group-hover:text-accent transition-colors"
+                      >
+                        Bespoke Audit & Case
+                        <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-accent" />
+                      </div>
+                      <span className="text-[10px] font-mono text-muted/30">ID // {project.id}</span>
                     </div>
                   </div>
-                  
-                  {/* Action Link button */}
-                  <div className="pt-6 mt-6 border-t border-card-border/60 flex items-center justify-between">
-                    <Link 
-                      to={`/case-study/${project.id}`}
-                      className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[1.5px] text-foreground hover:text-accent transition-colors cursor-pointer group/btn"
-                    >
-                      Bespoke Audit & Case
-                      <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform text-accent" />
-                    </Link>
-                    <span className="text-[10px] font-mono text-muted/30">ID // {project.id}</span>
-                  </div>
-                </div>
+                </Link>
               </motion.div>
             ))}
           </AnimatePresence>
