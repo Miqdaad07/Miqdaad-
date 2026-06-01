@@ -14,19 +14,51 @@
   --color-card-alt: var(--card-alt);
   --color-card-border: var(--card-border);
   --color-muted: var(--muted);
+  --color-bg-alt: var(--bg-alt);
+  --color-bg-deep: var(--bg-deep);
 }
 
 @layer base {
-  :root, .dark {
-    --bg: #030604; /* Extra rich deep dark forest black */
-    --fg: #f4fbf7; /* High contrast, crisp warm off-white */
-    --accent: #05db69; /* Neon-tinted vibrant emerald green */
-    --accent-hover: #10b981; /* Premium deep emerald */
-    --card: #090e0b; /* Deep glassy obsidian green card */
-    --card-alt: #101813; /* Alert/Active card state */
-    --card-border: rgba(16, 185, 129, 0.12); /* Emerald translucent border */
-    --muted: #8e9e95; /* Sage tinted muted text */
+  :root {
+    --bg: #fafdfb; /* Extremely premium, clean, high-end white background with a micro-mint warmth */
+    --fg: #08120d; /* Ultra deep forest-charcoal text for stellar high-contrast readability */
+    --accent: #028240; /* Royal forest emerald green, premium and elite */
+    --accent-hover: #015c2d; /* Prestige dark emerald */
+    --card: #ffffff; /* Squeaky-clean pure white card backings */
+    --card-alt: #f1f8f3; /* Rich minty off-white details */
+    --card-border: rgba(2, 130, 64, 0.12); /* Delicate forest border lines */
+    --muted: #4e6155; /* Sophisticated mid-tone charcoal sage read-enhancer */
+    --bg-alt: #f5fbf7; /* Lighter alternating clean white-green section bg */
+    --bg-deep: #ebf6ee; /* Deep luxury light-mint container background */
+    --glass-bg: rgba(255, 255, 255, 0.8); /* Adaptive light luxury glass */
+    --glass-border: rgba(2, 130, 64, 0.1); /* Super refined borders for light glass */
+    --glass-hover-bg: rgba(241, 248, 243, 0.9); /* Perfect mint hover overlay */
+    --glass-hover-border: rgba(2, 130, 64, 0.25);
   }
+
+  .dark {
+    --bg: #030604; /* Luxurious deep dark forest black */
+    --fg: #f4fbf7; /* Vibrant high contrast pristine warm off-white */
+    --accent: #05db69; /* Dynamic neon-emerald green */
+    --accent-hover: #10b981; /* Soft vibrant emerald hover */
+    --card: #090e0b; /* Obsidian-emerald dark deep container */
+    --card-alt: #101813; /* Elegant elevated container gray-green */
+    --card-border: rgba(16, 185, 129, 0.12); /* Vibrant neon accent borders */
+    --muted: #8e9e95; /* Elegant sage read-helper text */
+    --bg-alt: #020503; /* Obsidian dark alternate black */
+    --bg-deep: #040805; /* Deep luxury dark background block */
+    --glass-bg: rgba(9, 14, 11, 0.7);
+    --glass-border: rgba(16, 185, 129, 0.12);
+    --glass-hover-bg: rgba(16, 24, 19, 0.8);
+    --glass-hover-border: rgba(5, 219, 105, 0.3);
+  }
+}
+
+/* Base smooth transition for all themeable element properties */
+body, header, nav, div, p, span, h1, h2, h3, a, button, section, svg, input, textarea, scrollbar {
+  transition-property: background-color, border-color, color, text-decoration-color, fill, stroke, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 400ms;
 }
 
 body {
@@ -71,18 +103,18 @@ html {
 
 /* Glassmorphism custom classes */
 .glass-panel {
-  background: rgba(9, 14, 11, 0.7);
+  background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(16, 185, 129, 0.12);
+  border: 1px solid var(--glass-border);
 }
 
 .glass-panel-hover {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-panel-hover:hover {
-  background: rgba(16, 24, 19, 0.8);
-  border-color: rgba(5, 219, 105, 0.3);
+  background: var(--glass-hover-bg);
+  border-color: var(--glass-hover-border);
   box-shadow: 0 12px 40px -12px rgba(5, 219, 105, 0.15);
   transform: translateY(-4px);
 }

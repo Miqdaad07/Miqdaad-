@@ -37,9 +37,9 @@ export default function Contact() {
           name: formData.name,
           email: formData.email,
           replyto: formData.email,
-          subject: `Miqdaad Labs Inquiry: ${formData.subject || 'New Project Proposal'}`,
+          subject: `Dawodu Miqdaad Inquiry: ${formData.subject || 'New Project Proposal'}`,
           message: formData.message,
-          from_name: 'Miqdaad Labs Agency',
+          from_name: 'Dawodu Miqdaad',
           botcheck: ""
         })
       });
@@ -58,7 +58,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-28 px-4 md:px-8 bg-black relative overflow-hidden">
+    <section id="contact" className="py-28 px-4 md:px-8 bg-background relative overflow-hidden">
       
       {/* Background radial accent glow */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[300px] bg-accent/5 rounded-full blur-[140px] pointer-events-none" />
@@ -77,14 +77,14 @@ export default function Contact() {
             <Sparkles size={12} className="animate-spin duration-3000" />
             <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.15em] font-bold">Get In Touch</span>
           </div>
-          <h2 className="text-[32px] md:text-[45px] font-display font-extrabold text-white leading-tight">
+          <h2 className="text-[32px] md:text-[45px] font-display font-extrabold text-foreground leading-tight">
             Initiate Your <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-400">
+            <span className="text-accent bg-clip-text bg-gradient-to-r from-accent to-accent-hover dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-accent dark:to-emerald-400">
               Project Discovery
             </span>
           </h2>
           <p className="text-muted text-[13px] md:text-[14px] leading-relaxed mt-4 font-light">
-            Have a clear vision or want to co-pilot an aesthetic strategy audit? Drop us a prompt about lockups, design architectures, or active builds. Let's make something timeless.
+            Have a clear vision or want to co-pilot an aesthetic strategy audit? Drop me a prompt about lockups, design architectures, or active builds. Let's make something timeless.
           </p>
         </motion.div>
 
@@ -98,9 +98,9 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-4 space-y-6"
           >
-            <div className="p-6 md:p-8 rounded-3xl bg-card border border-accent/15 backdrop-blur-md relative overflow-hidden group text-left">
+            <div className="p-6 md:p-8 rounded-3xl bg-card border border-card-border backdrop-blur-md relative overflow-hidden group text-left">
               <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full pointer-events-none group-hover:bg-accent/10 transition-colors" />
-              <h3 className="text-[18px] md:text-[20px] font-display font-bold mb-6 text-white">Direct Channels</h3>
+              <h3 className="text-[18px] md:text-[20px] font-display font-bold mb-6 text-foreground">Direct Channels</h3>
               
               <div className="space-y-5">
                 <a href="mailto:dawodumiqdaad88@gmail.com" className="flex items-center gap-4 text-muted hover:text-accent transition-colors group/link">
@@ -109,7 +109,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-[11px] font-mono uppercase tracking-wider text-muted/60">HQ Email</p>
-                    <p className="text-[13px] md:text-[14px] text-white break-all">dawodumiqdaad88@gmail.com</p>
+                    <p className="text-[13px] md:text-[14px] text-foreground break-all">dawodumiqdaad88@gmail.com</p>
                   </div>
                 </a>
                 
@@ -119,7 +119,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-[11px] font-mono uppercase tracking-wider text-muted/60">WhatsApp</p>
-                    <p className="text-[13px] md:text-[14px] text-white">08062149408</p>
+                    <p className="text-[13px] md:text-[14px] text-foreground">08062149408</p>
                   </div>
                 </a>
               </div>
@@ -183,7 +183,7 @@ export default function Contact() {
                     className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl flex items-center gap-3 text-green-500 text-[13px] mb-4"
                   >
                     <CheckCircle2 size={18} />
-                    Inquiry submitted successfully! We will initiate your dispatch review within 12 hours.
+                    Inquiry submitted successfully! I will respond to your message within 12 hours.
                   </motion.div>
                 )}
                 {status === 'error' && (
@@ -208,20 +208,20 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-card border border-[#152e1e]/60 text-[13px] text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder:text-muted/40"
+                    className="w-full px-4 py-3 rounded-xl bg-card border border-card-border text-[13px] text-foreground focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder:text-muted/40"
                     placeholder="Enter your name"
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label htmlFor="email" className="text-[10px] font-mono text-muted/60 uppercase tracking-widest pl-1">Business Email</label>
+                  <label htmlFor="email" className="text-[10px] font-mono text-muted/60 uppercase tracking-widest pl-1">Email Address</label>
                   <input 
                     type="email" 
                     id="email" 
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-card border border-[#152e1e]/60 text-[13px] text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder:text-muted/40"
-                    placeholder="name@company.com"
+                    className="w-full px-4 py-3 rounded-xl bg-card border border-card-border text-[13px] text-foreground focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder:text-muted/40"
+                    placeholder="name@example.com"
                   />
                 </div>
               </div>
@@ -236,7 +236,7 @@ export default function Contact() {
                   id="subject" 
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-card border border-[#152e1e]/60 text-[13px] text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder:text-muted/40"
+                  className="w-full px-4 py-3 rounded-xl bg-card border border-card-border text-[13px] text-foreground focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all placeholder:text-muted/40"
                   placeholder="e.g. Islamic portal, High-converting Landing page, Custom E-commerce..."
                 />
               </div>
@@ -249,7 +249,7 @@ export default function Contact() {
                   rows={5}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-card border border-[#152e1e]/60 text-[13px] text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none placeholder:text-muted/40"
+                  className="w-full px-4 py-3 rounded-xl bg-card border border-card-border text-[13px] text-foreground focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none placeholder:text-muted/40"
                   placeholder="Outline your challenges, timeline targets, or custom integration needs..."
                 />
               </div>
@@ -257,17 +257,17 @@ export default function Contact() {
               <button 
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent text-black text-[12px] font-bold uppercase tracking-[1px] rounded-full hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 mt-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_4px_16px_rgba(5,219,105,0.25)] hover:shadow-[0_4px_24px_rgba(5,219,105,0.45)] cursor-pointer"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent text-white text-[12px] font-bold uppercase tracking-[1px] rounded-full hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 mt-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_4px_16px_rgba(5,219,105,0.25)] hover:shadow-[0_4px_24px_rgba(5,219,105,0.45)] cursor-pointer"
               >
                 {status === 'loading' ? (
                   <>
                     Transmitting Inquiry...
-                    <Loader2 size={15} className="animate-spin text-black" />
+                    <Loader2 size={15} className="animate-spin text-white" />
                   </>
                 ) : (
                   <>
                     Initiate Discovery
-                    <Send size={14} className="text-black" />
+                    <Send size={14} className="text-white" />
                   </>
                 )}
               </button>

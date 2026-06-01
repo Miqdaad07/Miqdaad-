@@ -4,20 +4,20 @@ import { ArrowRight, Sparkles, Code, Play, ShieldAlert, Cpu, HeartHandshake } fr
 export default function Hero() {
   const stats = [
     { value: '99%', label: 'Page Speed Index', desc: 'Average Lighthouse Score' },
-    { value: '250k+', label: 'User Transactions', desc: 'Processed by our apps' },
-    { value: '1.5M+', label: 'Funding Secured', desc: 'By our client websites' },
+    { value: '250k+', label: 'User Transactions', desc: 'Processed via custom systems' },
+    { value: '1.5M+', label: 'Funding Secured', desc: 'By web applications I built' },
   ];
 
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center pt-32 pb-16 px-4 md:px-8 relative overflow-hidden bg-gradient-to-br from-[#020503] via-[#050c07] to-[#010402]"
+      className="min-h-screen flex items-center pt-32 pb-16 px-4 md:px-8 relative overflow-hidden bg-gradient-to-br from-bg-alt via-background to-bg-deep"
     >
       {/* Neo-emerald subtle grid background */}
       <div 
         className="absolute inset-0 opacity-[0.04] pointer-events-none" 
         style={{
-          backgroundImage: `radial-gradient(#05db69 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(var(--accent) 1px, transparent 1px)`,
           backgroundSize: '24px 24px',
         }}
       />
@@ -40,13 +40,13 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full text-accent">
               <Sparkles size={14} className="animate-spin duration-3000" />
               <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-semibold">
-                Premium Web Development Boutique
+                Premium Software Engineer & Architect
               </span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-[38px] md:text-[60px] font-display font-extrabold tracking-tight leading-[1.05] text-white">
-              We Build Modern <br />
+            <h1 className="text-[38px] md:text-[60px] font-display font-extrabold tracking-tight leading-[1.05] text-foreground">
+              I Build Modern <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-emerald-400 to-emerald-500 drop-shadow-[0_2px_15px_rgba(5,219,105,0.2)]">
                 Websites That Grow
               </span> <br />
@@ -55,7 +55,7 @@ export default function Hero() {
 
             {/* Subheadline Decoupled description */}
             <p className="text-[15px] md:text-[17.5px] text-muted max-w-xl leading-[1.6] font-light">
-              Miqdaad Labs crafts bespoke digital solutions, optimized for speed, aesthetics, and conversions. From high-growth landing pages and complex e-commerce to custom Islamic web apps.
+              I am Dawodu Miqdaad, designing and programming bespoke high-performance web systems optimized for absolute speed, clean aesthetics, and direct conversion. Specializing in React, Next.js, and sleek custom architecture.
             </p>
 
             {/* Highlighted Tags */}
@@ -75,16 +75,16 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent text-black text-[13px] font-bold uppercase tracking-[1px] rounded-full hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 shadow-[0_5px_20px_rgba(5,219,105,0.3)] hover:shadow-[0_5px_30px_rgba(5,219,105,0.5)] cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent text-white hover:text-white text-[13px] font-bold uppercase tracking-[1px] rounded-full hover:bg-accent-hover dark:hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 shadow-[0_5px_20px_rgba(2,130,64,0.15)] dark:shadow-[0_5px_20px_rgba(5,219,105,0.3)] hover:shadow-[0_5px_30px_rgba(2,130,64,0.25)] dark:hover:shadow-[0_5px_30px_rgba(5,219,105,0.5)] cursor-pointer"
               >
-                Book a Project
+                Hire Me
                 <ArrowRight size={15} strokeWidth={2.5} />
               </a>
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent border border-card-border text-foreground text-[13px] font-bold uppercase tracking-[1px] rounded-full hover:bg-card-alt hover:border-accent/40 transition-colors cursor-pointer"
               >
-                View Our Work
+                View My Work
               </a>
             </div>
 
@@ -112,60 +112,60 @@ export default function Hero() {
               <div className="absolute -inset-1 bg-gradient-to-r from-accent to-emerald-600 rounded-3xl blur-md opacity-25" />
               
               {/* Dev Mockup IDE Window */}
-              <div className="relative rounded-2xl bg-card border border-accent/25 overflow-hidden shadow-2xl glass-panel">
+              <div className="relative rounded-2xl bg-card border border-card-border overflow-hidden shadow-2xl glass-panel">
                 
                 {/* Simulated IDE Bar */}
-                <div className="flex items-center justify-between px-5 py-3 border-b border-card-border bg-[#050906]/85">
+                <div className="flex items-center justify-between px-5 py-3 border-b border-card-border bg-card-alt/80">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block" />
                     <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 inline-block" />
                     <span className="w-2.5 h-2.5 rounded-full bg-accent/80 inline-block" />
                   </div>
-                  <div className="font-mono text-[9px] text-[#55695e] uppercase tracking-[0.1em]">
-                    m-labs-compiler.js
+                  <div className="font-mono text-[9px] text-[#55695e] dark:text-[#a7f3d0]/60 uppercase tracking-[0.1em]">
+                    compiler.ts
                   </div>
                   <div className="w-6" /> {/* Spacer */}
                 </div>
 
                 {/* Dashboard Code / Live Monitor */}
-                <div className="p-6 font-mono text-[11px] space-y-4 text-emerald-100/90 leading-normal overflow-hidden">
+                <div className="p-6 font-mono text-[11px] space-y-4 text-muted dark:text-emerald-100/90 leading-normal overflow-hidden">
                   <div className="flex items-center gap-2 text-muted">
                     <span className="text-accent">&gt;</span>
-                    <span>yarn init miqdaad-labs-engine</span>
+                    <span>yarn build --profile=miqdaad</span>
                   </div>
                   
                   {/* JSON Config mockup */}
                   <div className="text-muted/65">
-                    <span className="text-[#bfdbfe]">const</span> <span className="text-[#a7f3d0]">agencySpecs</span> = &#123;
+                    <span className="text-[#028240] dark:text-[#bfdbfe]">const</span> <span className="text-[#a21caf] dark:text-[#a7f3d0]">developerSpecs</span> = &#123;
                     <div className="pl-4">
                       <span>architecture: </span><span className="text-accent">"Edge-Rendered SSR"</span>,
                       <br />
-                      <span>designPhilosophy: </span><span className="text-emerald-300">"Pure Luxury & Speed"</span>,
+                      <span>designPhilosophy: </span><span className="text-accent-hover dark:text-emerald-300">"Pure Luxury & Speed"</span>,
                       <br />
-                      <span>standardCoreVitals: </span><span className="text-[#f9a8d4]">"100/100"</span>
+                      <span>standardCoreVitals: </span><span className="text-[#be185d] dark:text-[#f9a8d4]">"100/100"</span>
                     </div>
                     &#125;;
                   </div>
 
                   {/* Core Web Vitals dynamic performance panel */}
-                  <div className="p-3 bg-card-alt/80 border border-card-border rounded-xl space-y-2">
+                  <div className="p-3 bg-card-alt/50 dark:bg-card-alt/80 border border-card-border rounded-xl space-y-2">
                     <div className="flex items-center justify-between text-[10px]">
                       <span className="text-muted font-bold tracking-wide">LIGHTHOUSE STATUS</span>
                       <span className="text-accent flex items-center gap-1 font-bold">
-                        <span className="w-1.5 h-1.5 bg-accent rounded-full animate-ping" /> PASSING 
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full animate-ping mr-0.5" /> PASSING 
                       </span>
                     </div>
                     <div className="grid grid-cols-3 gap-2 pt-1 text-center">
-                      <div className="bg-[#040805] p-1.5 rounded border border-accent/25">
+                      <div className="bg-background p-1.5 rounded border border-card-border">
                         <div className="text-[14px] font-bold text-accent">100</div>
                         <div className="text-[8px] text-muted">PERF</div>
                       </div>
-                      <div className="bg-[#040805] p-1.5 rounded border border-accent/25">
-                        <div className="text-[14px] font-bold text-emerald-400">100</div>
+                      <div className="bg-background p-1.5 rounded border border-card-border">
+                        <div className="text-[14px] font-bold text-accent">100</div>
                         <div className="text-[8px] text-muted">A11Y</div>
                       </div>
-                      <div className="bg-[#040805] p-1.5 rounded border border-accent/25">
-                        <div className="text-[14px] font-bold text-emerald-400">100</div>
+                      <div className="bg-background p-1.5 rounded border border-card-border">
+                        <div className="text-[14px] font-bold text-accent">100</div>
                         <div className="text-[8px] text-muted">SEO</div>
                       </div>
                     </div>
@@ -176,7 +176,7 @@ export default function Hero() {
                     <span className="flex items-center gap-1.5 text-accent font-semibold">
                       <Cpu size={12} className="animate-spin" /> Bundle Compiled in 4ms
                     </span>
-                    <span className="text-emerald-500/80">Edge-Live</span>
+                    <span className="text-accent-hover dark:text-emerald-500/80 font-semibold">Edge-Live</span>
                   </div>
                 </div>
 
@@ -186,15 +186,15 @@ export default function Hero() {
               <motion.div 
                 animate={{ y: [0, -8, 0] }}
                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                className="absolute -bottom-6 -left-6 bg-card-alt border border-accent/30 p-3.5 rounded-xl shadow-xl backdrop-blur-md z-20 pointer-events-auto"
+                className="absolute -bottom-6 -left-6 bg-card/90 border border-card-border p-3.5 rounded-xl shadow-xl backdrop-blur-md z-20 pointer-events-auto"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-accent/20 rounded-lg flex items-center justify-center text-accent">
+                  <div className="w-9 h-9 bg-accent/15 rounded-lg flex items-center justify-center text-accent">
                     <Play size={14} className="fill-accent text-accent" />
                   </div>
                   <div>
-                    <p className="text-[12px] font-bold">Launch Rate Max</p>
-                    <p className="text-[9px] text-[#55695e] font-mono">+12.4% Conversions</p>
+                    <p className="text-[12px] font-bold text-foreground">Launch Rate Max</p>
+                    <p className="text-[11px] text-muted font-mono leading-none mt-0.5">+12.4% Conversions</p>
                   </div>
                 </div>
               </motion.div>
@@ -213,9 +213,9 @@ export default function Hero() {
           {stats.map((stat, i) => (
             <div 
               key={i} 
-              className="text-left space-y-1 p-4 rounded-2xl bg-[#040805]/40 border border-card-border/40 hover:border-accent/15 transition-colors group cursor-default"
+              className="text-left space-y-1 p-4 rounded-2xl bg-card-alt/40 border border-card-border/60 hover:border-accent/25 transition-colors group cursor-default"
             >
-              <div className="text-[32px] md:text-[38px] font-display font-extrabold text-white group-hover:text-accent transition-colors flex items-baseline gap-1 leading-none">
+              <div className="text-[32px] md:text-[38px] font-display font-extrabold text-foreground group-hover:text-accent transition-colors flex items-baseline gap-1 leading-none">
                 {stat.value}
               </div>
               <div className="text-[12px] font-display font-bold text-foreground">

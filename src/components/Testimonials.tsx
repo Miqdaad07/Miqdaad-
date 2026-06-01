@@ -4,21 +4,21 @@ import { Quote, Star, ArrowUpRight } from 'lucide-react';
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "Miqdaad Labs transformed our local outreach. They hand-coded a stunning, high-performance platform for our Islamic organization. It loads instantly and our donations increased by 40% in two months.",
+      quote: "Miqdaad transformed our local outreach. He hand-coded a stunning, high-performance platform for our Islamic organization. It loads instantly and our donations increased by 40% in two months.",
       author: "Abdur-Rahman Al-Farooq",
       role: "Director, Al-Noor Community Hub",
       project: "Islamic Community Hub Portal",
       rating: 5
     },
     {
-      quote: "We needed a ultra-fast custom application with strict zero-bloat standards. Miqdaad Labs delivered a flawlessly engineered React ecosystem. The user response time is unmatched, and our conversion rate is at an all-time high.",
+      quote: "We needed a ultra-fast custom application with strict zero-bloat standards. Miqdaad delivered a flawlessly engineered React ecosystem. The user response time is unmatched, and our conversion rate is at an all-time high.",
       author: "Sarah Jenkins",
       role: "VP of Product, NexaGlobal Systems",
       project: "Enterprise Custom App Platform",
       rating: 5
     },
     {
-      quote: "Unbelievable speed and world-class design standards. They crafted an eye-safe, gorgeous glassmorphic agency web app that completely redefined our brand status among Fortune 500 partners.",
+      quote: "Unbelievable speed and world-class design standards. He crafted an eye-safe, gorgeous glassmorphic web app that completely redefined our brand status among Fortune 500 partners.",
       author: "Tariq Mahmood",
       role: "Co-Founder, Apex Capital Ventures",
       project: "Financial Advisory Platform",
@@ -27,7 +27,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="py-28 px-4 md:px-8 bg-black relative overflow-hidden">
+    <section id="testimonials" className="py-28 px-4 md:px-8 bg-background relative overflow-hidden">
       {/* Dynamic background light flares */}
       <div className="absolute top-1/2 left-1/4 w-[350px] h-[350px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -39,14 +39,14 @@ export default function Testimonials() {
             <Quote size={12} className="text-accent" />
             <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.15em] font-bold">Social Proof</span>
           </div>
-          <h2 className="text-[32px] md:text-[45px] font-display font-extrabold text-white leading-tight">
+          <h2 className="text-[32px] md:text-[45px] font-display font-extrabold text-foreground leading-tight">
             Trusted By Elite <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-400">
+            <span className="text-accent bg-clip-text bg-gradient-to-r from-accent to-accent-hover dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-accent dark:to-emerald-400">
               Founders & Builders
             </span>
           </h2>
           <p className="text-muted text-[13px] md:text-[14px] leading-relaxed font-light">
-            We prioritize engineering mastery and visual luxury. Read how we help our partners project authority and generate concrete business growth.
+            I prioritize engineering mastery and visual luxury. Read how I help my partners project authority and generate concrete business growth.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function Testimonials() {
 
               {/* Author footer inside card */}
               <div className="mt-8 pt-6 border-t border-card-border/60 flex flex-col gap-1.5">
-                <h4 className="text-[14px] font-display font-bold text-white tracking-tight">
+                <h4 className="text-[14px] font-display font-bold text-foreground tracking-tight">
                   {item.author}
                 </h4>
                 <p className="text-[11px] text-muted/65 leading-none">

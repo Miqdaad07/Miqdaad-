@@ -44,7 +44,7 @@ export default function CTA() {
               </span>
             </h2>
             <p className="text-muted text-[13px] md:text-[14px] leading-relaxed font-light">
-              We only accept <span className="text-white font-semibold">3 bespoke web engineering collaborations</span> each month to maintain our flawless QA standards and extreme execution speed. Secure your slot today.
+              I only accept <span className="text-white font-semibold">a limited number of bespoke collaborations</span> each month to maintain my flawless QA standards and extreme execution speed. Let's talk today.
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export default function CTA() {
               onClick={handleScrollToContact}
               className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-black font-bold uppercase text-[12px] tracking-[1.5px] rounded-full hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 shadow-[0_4px_20px_rgba(5,219,105,0.3)] hover:shadow-[0_4px_30px_rgba(5,219,105,0.5)] cursor-pointer"
             >
-              Book a Project Discovery
+              Initiate Project Inquiry
               <ArrowRight size={14} className="text-black" />
             </a>
           </div>

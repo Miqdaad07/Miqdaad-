@@ -41,7 +41,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="process" className="py-28 px-4 md:px-8 bg-[#020503] relative overflow-hidden">
+    <section id="process" className="py-28 px-4 md:px-8 bg-bg-alt relative overflow-hidden">
       {/* Decorative vertical background blur */}
       <div className="absolute right-0 top-1/4 w-[1px] h-1/2 bg-accent/30 blur-[2px]" />
       
@@ -53,9 +53,9 @@ export default function Experience() {
             <Compass size={12} className="animate-spin duration-[4000ms]" />
             <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.15em] font-bold">The Blueprint</span>
           </div>
-          <h2 className="text-[32px] md:text-[45px] font-display font-extrabold text-white leading-tight">
+          <h2 className="text-[32px] md:text-[45px] font-display font-extrabold text-foreground leading-tight">
             Our Elite Digital <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-400">
+            <span className="text-accent bg-clip-text bg-gradient-to-r from-accent to-accent-hover dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-accent dark:to-emerald-400">
               Delivery Framework
             </span>
           </h2>
@@ -77,12 +77,12 @@ export default function Experience() {
             >
               {/* Checkpoint indicators both for mobile and desktop */}
               {/* Desktop node */}
-              <div className="hidden md:flex absolute top-[-38px] left-[10%] -translate-x-1/2 w-6 h-6 rounded-full bg-[#020503] border border-accent/40 items-center justify-center shadow-[0_0_10px_rgba(5,219,105,0.2)]">
+              <div className="hidden md:flex absolute top-[-38px] left-[10%] -translate-x-1/2 w-6 h-6 rounded-full bg-bg-alt border border-accent/40 items-center justify-center shadow-[0_0_10px_rgba(5,219,105,0.2)]">
                 <span className="w-2 h-2 bg-accent rounded-full" />
               </div>
 
               {/* Mobile node */}
-              <div className="md:hidden absolute top-1.5 left-[-31px] w-5 h-5 rounded-full bg-[#020503] border border-accent/40 flex items-center justify-center">
+              <div className="md:hidden absolute top-1.5 left-[-31px] w-5 h-5 rounded-full bg-bg-alt border border-accent/40 flex items-center justify-center">
                 <span className="w-1.5 h-1.5 bg-accent rounded-full" />
               </div>
 
@@ -98,7 +98,7 @@ export default function Experience() {
 
               {/* Step context */}
               <div className="space-y-2">
-                <h3 className="text-[16px] md:text-[17px] font-display font-bold text-white tracking-tight leading-snug">
+                <h3 className="text-[16px] md:text-[17px] font-display font-bold text-foreground tracking-tight leading-snug">
                   {step.title}
                 </h3>
                 <p className="font-mono text-[9px] uppercase tracking-wider text-accent">

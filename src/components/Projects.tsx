@@ -29,7 +29,7 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="py-28 px-4 md:px-8 bg-gradient-to-b from-black to-[#040805]">
+    <section id="projects" className="py-28 px-4 md:px-8 bg-gradient-to-b from-background to-bg-deep">
       <div className="container mx-auto max-w-6xl">
         
         {/* Header Section */}
@@ -45,15 +45,15 @@ export default function Projects() {
               <FolderGit size={12} className="animate-pulse" />
               <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.15em] font-bold">Case Studies</span>
             </div>
-            <h2 className="text-[32px] md:text-[45px] font-display font-extrabold text-white leading-tight">
+            <h2 className="text-[32px] md:text-[45px] font-display font-extrabold text-foreground leading-tight">
               Selected Collaborations <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-400">
+              <span className="text-accent bg-clip-text bg-gradient-to-r from-accent to-accent-hover dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-accent dark:to-emerald-400">
                 & Bespoke Digital Masterpieces
               </span>
             </h2>
           </div>
           
-          <span className="font-mono text-[11px] px-3.5 py-1.5 bg-card-alt border border-card-border rounded-xl text-muted/80 self-start md:self-auto">
+          <span className="font-mono text-[11px] px-3.5 py-1.5 bg-card border border-card-border rounded-xl text-muted/80 self-start md:self-auto">
             // TOTAL METRIC: {projects.length.toString().padStart(2, '0')} REPOS
           </span>
         </motion.div>
@@ -66,8 +66,8 @@ export default function Projects() {
               onClick={() => setActiveFilter(filter.value)}
               className={`px-5 py-2 rounded-full text-[12px] font-medium tracking-[0.5px] transition-all duration-300 cursor-pointer ${
                 activeFilter === filter.value
-                  ? 'bg-accent text-black font-semibold shadow-[0_4px_16px_rgba(5,219,105,0.25)]'
-                  : 'bg-[#101813]/40 text-muted hover:text-white border border-card-border/40 hover:border-accent/30'
+                  ? 'bg-accent text-white dark:text-black font-semibold shadow-[0_4px_16px_rgba(2,130,64,0.15)] dark:shadow-[0_4px_16px_rgba(5,219,105,0.25)]'
+                  : 'bg-card text-muted hover:text-foreground border border-card-border hover:border-accent/30'
               }`}
             >
               {filter.label}
@@ -90,11 +90,11 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="group bg-card rounded-3xl overflow-hidden border border-accent/15 hover:border-accent/40 shadow-[0_10px_35px_-12px_rgba(0,0,0,0.8)] hover:shadow-[0_15px_40px_-10px_rgba(5,219,105,0.06)] transition-all duration-500 h-full text-left"
+                className="group bg-card rounded-3xl overflow-hidden border border-card-border hover:border-accent/40 shadow-md dark:shadow-[0_10px_35px_-12px_rgba(0,0,0,0.8)] hover:shadow-xl dark:hover:shadow-[0_15px_40px_-10px_rgba(5,219,105,0.06)] transition-all duration-500 h-full text-left"
               >
                 <Link to={`/case-study/${project.id}`} className="flex flex-col h-full justify-between">
                   {/* Visual Image Container with custom scale interaction */}
-                  <div className="aspect-[16/10] overflow-hidden relative border-b border-card-border/50 bg-[#020503]">
+                  <div className="aspect-[16/10] overflow-hidden relative border-b border-card-border/50 bg-card-alt">
                     <img 
                       src={project.image} 
                       alt={project.title}
@@ -102,7 +102,7 @@ export default function Projects() {
                       referrerPolicy="no-referrer"
                     />
                     {/* Decorative Glass Overlay */}
-                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-90" />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent dark:from-black/90 dark:via-black/50 dark:to-transparent opacity-90" />
                     
                     {/* Live or In Progress tag */}
                     {project.inProgress ? (
@@ -121,12 +121,12 @@ export default function Projects() {
                     <div className="space-y-3.5">
                       {/* Tags block */}
                       <div className="flex flex-wrap gap-1.5">
-                        <span className="text-[9px] text-[#05db69] font-mono uppercase tracking-[1.5px] border border-accent/30 bg-accent/5 px-2.5 py-0.5 rounded-md">
+                        <span className="text-[9px] text-accent font-mono uppercase tracking-[1.5px] border border-accent/20 bg-accent/5 px-2.5 py-0.5 rounded-md">
                           {project.category}
                         </span>
                       </div>
 
-                      <h3 className="text-[20px] md:text-[23px] font-display font-bold text-white group-hover:text-accent transition-colors">
+                      <h3 className="text-[20px] md:text-[23px] font-display font-bold text-foreground group-hover:text-accent transition-colors">
                         {project.title}
                       </h3>
                       

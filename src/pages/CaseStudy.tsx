@@ -18,7 +18,7 @@ export default function CaseStudy() {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-6 bg-[#020503] text-white">
+      <div className="min-h-screen flex items-center justify-center p-6 bg-background text-foreground">
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-display font-bold mb-4">Case Study Not Found</h1>
           <Link to="/" className="text-accent hover:underline inline-flex items-center gap-2 font-mono text-[13px]">
@@ -30,7 +30,7 @@ export default function CaseStudy() {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-gradient-to-b from-[#020503] via-[#050c07] to-[#010402] relative overflow-hidden">
+    <div className="min-h-screen pt-32 pb-24 bg-gradient-to-b from-background via-bg-alt to-bg-deep relative overflow-hidden">
       
       {/* Subtle background grids */}
       <div 
@@ -73,7 +73,7 @@ export default function CaseStudy() {
               <Sparkles size={11} className="text-accent animate-pulse" /> {project.category}
             </span>
             
-            <h1 className="text-[34px] md:text-[52px] font-display font-extrabold tracking-tight leading-[1.1] text-white">
+            <h1 className="text-[34px] md:text-[52px] font-display font-extrabold tracking-tight leading-[1.1] text-foreground">
               {project.title}
             </h1>
             
@@ -82,7 +82,7 @@ export default function CaseStudy() {
             </p>
 
             {project.inProgress ? (
-              <div className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#1a120b] border border-amber-600/30 text-amber-400 font-bold uppercase text-[11.5px] tracking-[1.5px] rounded-full shadow-[0_4px_16px_rgba(245,158,11,0.06)]">
+              <div className="inline-flex items-center gap-2 px-6 py-3.5 bg-amber-500/10 border border-amber-500/20 text-amber-500 font-bold uppercase text-[11.5px] tracking-[1.5px] rounded-full shadow-[0_4px_16px_rgba(245,158,11,0.06)]">
                 <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse mr-0.5"></span>
                 Engineering & Assembly Phase
               </div>
@@ -91,7 +91,7 @@ export default function CaseStudy() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent text-black font-bold uppercase text-[12px] tracking-[1.5px] rounded-full hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 shadow-[0_4px_16px_rgba(5,219,105,0.25)]"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent text-white font-bold uppercase text-[12px] tracking-[1.5px] rounded-full hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 shadow-[0_4px_16px_rgba(22,101,52,0.1)] dark:shadow-[0_4px_16px_rgba(5,219,105,0.25)]"
               >
                 Visit Live Project
                 <ExternalLink size={15} strokeWidth={2.5} />
@@ -111,7 +111,7 @@ export default function CaseStudy() {
               </div>
               <div>
                 <h4 className="font-mono text-[10px] text-muted/60 uppercase tracking-widest mb-3 font-bold">Bespoke Scope</h4>
-                <p className="text-[13px] font-display font-bold text-white leading-normal">{project.category}</p>
+                <p className="text-[13px] font-display font-bold text-foreground leading-normal">{project.category}</p>
               </div>
             </div>
           </motion.div>
@@ -121,7 +121,7 @@ export default function CaseStudy() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-accent/20 bg-card"
+            className="lg:col-span-5 aspect-[4/3] rounded-3xl overflow-hidden shadow-lg dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-card-border bg-card"
           >
             <img 
               src={project.image} 
@@ -138,9 +138,9 @@ export default function CaseStudy() {
              initial={{ opacity: 0, y: 25 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
-             className="space-y-4 p-5 rounded-2xl bg-[#040805]/60 border border-card-border"
+             className="space-y-4 p-5 rounded-2xl bg-card border border-card-border"
           >
-            <h3 className="text-[18px] md:text-[20px] font-display font-bold text-white">The Challenge</h3>
+            <h3 className="text-[18px] md:text-[20px] font-display font-bold text-foreground">The Challenge</h3>
             <p className="text-[13px] md:text-[14px] text-muted leading-[1.6] font-light">
               {project.challenge}
             </p>
@@ -151,7 +151,7 @@ export default function CaseStudy() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.1 }}
-             className="space-y-4 p-5 rounded-2xl bg-[#040805]/60 border border-accent/15"
+             className="space-y-4 p-5 rounded-2xl bg-card border border-accent/15"
           >
             <h3 className="text-[18px] md:text-[20px] font-display font-bold text-accent">The Solution</h3>
             <p className="text-[13px] md:text-[14px] text-muted leading-[1.6] font-light">
@@ -164,9 +164,9 @@ export default function CaseStudy() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.2 }}
-             className="space-y-4 p-5 rounded-2xl bg-[#040805]/60 border border-card-border"
+             className="space-y-4 p-5 rounded-2xl bg-card border border-card-border"
           >
-            <h3 className="text-[18px] md:text-[20px] font-display font-bold text-white">The Outcome</h3>
+            <h3 className="text-[18px] md:text-[20px] font-display font-bold text-foreground">The Outcome</h3>
             <p className="text-[13px] md:text-[14px] text-muted leading-[1.6] font-light">
               {project.outcome}
             </p>
@@ -180,7 +180,7 @@ export default function CaseStudy() {
             className="group block text-center"
           >
             <span className="text-[11px] uppercase tracking-[3px] text-accent font-mono block mb-3">// NEXT AUDIT</span>
-            <h2 className="text-[28px] md:text-[45px] font-display font-extrabold tracking-tight group-hover:translate-x-4 transition-transform inline-flex items-center gap-4 text-white hover:text-accent">
+            <h2 className="text-[28px] md:text-[45px] font-display font-extrabold tracking-tight group-hover:translate-x-4 transition-transform inline-flex items-center gap-4 text-foreground hover:text-accent">
               {projects[(projects.findIndex(p => p.id === id) + 1) % projects.length].title}
               <ChevronRight size={32} className="text-accent animate-pulse" />
             </h2>

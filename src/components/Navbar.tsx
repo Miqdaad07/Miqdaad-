@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -98,10 +99,10 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="text-[17px] font-display font-extrabold text-foreground tracking-[0.02em] leading-none transition-all duration-300 group-hover:text-accent">
-                MIQDAAD <span className="text-accent group-hover:text-white transition-colors duration-300">LABS</span>
+                MIQDAAD
               </span>
               <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-accent font-medium leading-none mt-1.5 transition-colors duration-300 group-hover:text-muted">
-                WEB AGENCY
+                SOFTWARE ENGINEER
               </span>
             </div>
           </Link>
@@ -135,27 +136,29 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
+            <ThemeToggle />
             {location.pathname === '/' ? (
               <button 
                 onClick={() => handleNavClick('contact')}
-                className="flex items-center gap-2 px-6 py-2.5 bg-accent text-black text-[12px] font-bold uppercase tracking-[1px] rounded-full hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-[0_4px_16px_rgba(5,219,105,0.25)] hover:shadow-[0_4px_24px_rgba(5,219,105,0.45)] cursor-pointer"
+                className="flex items-center gap-2 px-6 py-2.5 bg-accent text-white text-[12px] font-bold uppercase tracking-[1px] rounded-full hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-[0_4px_16px_rgba(5,219,105,0.25)] hover:shadow-[0_4px_24px_rgba(5,219,105,0.45)] cursor-pointer"
               >
-                Book a Project
+                Get in Touch
                 <ArrowUpRight size={14} strokeWidth={2.5} />
               </button>
             ) : (
               <Link
                 to="/#contact"
-                className="flex items-center gap-2 px-6 py-2.5 bg-accent text-black text-[12px] font-bold uppercase tracking-[1px] rounded-full hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-[0_4px_16px_rgba(5,219,105,0.25)] hover:shadow-[0_4px_24px_rgba(5,219,105,0.45)]"
+                className="flex items-center gap-2 px-6 py-2.5 bg-accent text-white text-[12px] font-bold uppercase tracking-[1px] rounded-full hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-[0_4px_16px_rgba(5,219,105,0.25)] hover:shadow-[0_4px_24px_rgba(5,219,105,0.45)]"
               >
-                Book a Project
+                Get in Touch
                 <ArrowUpRight size={14} strokeWidth={2.5} />
               </Link>
             )}
           </div>
 
           {/* Mobile Toggle */}
-          <div className="flex items-center lg:hidden">
+          <div className="flex items-center lg:hidden gap-3">
+            <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 text-foreground hover:text-accent transition-colors cursor-pointer"
@@ -200,8 +203,8 @@ export default function Navbar() {
                   </div>
                 </div>
                 <div>
-                  <p className="font-display font-bold text-[14px] text-foreground">Miqdaad Labs HQ</p>
-                  <p className="text-[9px] uppercase tracking-wider text-accent font-mono flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse inline-block"></span>Systems Active</p>
+                  <p className="font-display font-bold text-[14px] text-foreground">Dawodu Miqdaad</p>
+                  <p className="text-[9px] uppercase tracking-wider text-accent font-mono flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse inline-block"></span>Available for Hire</p>
                 </div>
               </div>
 
@@ -222,9 +225,9 @@ export default function Navbar() {
               <div className="pt-4 border-t border-card-border">
                 <button 
                   onClick={() => handleNavClick('contact')}
-                  className="w-full flex items-center justify-center gap-2 py-3 bg-accent text-black text-[12px] font-bold uppercase tracking-[1px] rounded-2xl cursor-pointer shadow-[0_4px_16px_rgba(5,219,105,0.2)]"
+                  className="w-full flex items-center justify-center gap-2 py-3 bg-accent text-white text-[12px] font-bold uppercase tracking-[1px] rounded-2xl cursor-pointer shadow-[0_4px_16px_rgba(5,219,105,0.2)]"
                 >
-                  Book a Project
+                  Get in Touch
                   <ArrowUpRight size={14} strokeWidth={2.5} />
                 </button>
               </div>
