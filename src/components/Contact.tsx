@@ -3,6 +3,12 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Mail, MessageSquare, Send, Github, Linkedin, Twitter, Instagram, CheckCircle2, AlertCircle, Loader2, Sparkles } from 'lucide-react';
 
 export default function Contact() {
+  // =========================================================
+  // SPACE TO INCLUDE THE LINK FOR X (Formerly Twitter) & WHATSAPP
+  // =========================================================
+  const xLink = "https://x.com/miqdaadlabs"; // <- INSERT YOUR X LINK HERE
+  const whatsappLink = "https://wa.me/2348062149408"; // <- INSERT YOUR WHATSAPP LINK HERE
+
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({
     name: '',
@@ -124,41 +130,29 @@ export default function Contact() {
                 </a>
               </div>
 
-              {/* Social Channels Section updated to @miqdaadlabs */}
+              {/* Social Channels Section - Only X and WhatsApp */}
               <div className="mt-10 pt-8 border-t border-card-border/60">
                 <h4 className="text-[12px] font-mono uppercase tracking-wider text-muted/50 mb-4 font-bold">Audit Socials</h4>
                 <div className="flex gap-3">
+                  {/* Space for X Link */}
                   <a 
-                    href="https://instagram.com/miqdaadlabs" 
+                    href={xLink} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="w-10 h-10 rounded-xl bg-card-alt border border-card-border/70 flex items-center justify-center text-muted hover:text-accent hover:border-accent/40 hover:scale-105 transition-all"
-                  >
-                    <Instagram size={16} />
-                  </a>
-                  <a 
-                    href="https://x.com/miqdaadlabs" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                    title="X (formerly Twitter)"
                     className="w-10 h-10 rounded-xl bg-card-alt border border-card-border/70 flex items-center justify-center text-muted hover:text-accent hover:border-accent/40 hover:scale-105 transition-all"
                   >
                     <Twitter size={16} />
                   </a>
+                  {/* WhatsApp Link */}
                   <a 
-                    href="https://github.com" 
+                    href={whatsappLink} 
                     target="_blank" 
                     rel="noopener noreferrer" 
+                    title="WhatsApp"
                     className="w-10 h-10 rounded-xl bg-card-alt border border-card-border/70 flex items-center justify-center text-muted hover:text-accent hover:border-accent/40 hover:scale-105 transition-all"
                   >
-                    <Github size={16} />
-                  </a>
-                  <a 
-                    href="https://linkedin.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="w-10 h-10 rounded-xl bg-card-alt border border-card-border/70 flex items-center justify-center text-muted hover:text-accent hover:border-accent/40 hover:scale-105 transition-all"
-                  >
-                    <Linkedin size={16} />
+                    <MessageSquare size={16} />
                   </a>
                 </div>
               </div>

@@ -19,13 +19,13 @@ export default function CTA() {
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-black to-[#020503] relative overflow-hidden">
+    <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-background to-bg-alt relative overflow-hidden">
       
       {/* Decorative center radial background gradient */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[250px] bg-accent/5 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="container mx-auto max-w-5xl relative z-10">
-        <div className="p-8 md:p-14 rounded-[32px] bg-card border border-accent/20 relative overflow-hidden group text-center space-y-8">
+        <div className="p-8 md:p-14 rounded-[32px] bg-card border border-card-border relative overflow-hidden group text-center space-y-8">
           
           {/* Cyber accents */}
           <div className="absolute top-0 left-12 w-28 h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent" />
@@ -37,26 +37,26 @@ export default function CTA() {
           </div>
 
           <div className="space-y-4 max-w-2xl mx-auto">
-            <h2 className="text-[28px] md:text-[45px] font-display font-extrabold text-white leading-tight">
+            <h2 className="text-[28px] md:text-[45px] font-display font-extrabold text-foreground leading-tight">
               Ready to Accelerate Your <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-400">
+              <span className="text-accent bg-clip-text bg-gradient-to-r from-accent to-accent-hover dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-accent dark:to-emerald-400">
                 Digital Dominance?
               </span>
             </h2>
             <p className="text-muted text-[13px] md:text-[14px] leading-relaxed font-light">
-              I only accept <span className="text-white font-semibold">a limited number of bespoke collaborations</span> each month to maintain my flawless QA standards and extreme execution speed. Let's talk today.
+              I only accept <span className="text-foreground font-semibold">a limited number of bespoke collaborations</span> each month to maintain my flawless QA standards and extreme execution speed. Let's talk today.
             </p>
           </div>
 
           {/* Inline trust badges */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-muted font-mono text-[10px] md:text-[11px] uppercase tracking-wider">
-            <span className="flex items-center gap-1.5 px-3 py-1 bg-card-alt border border-card-border rounded-full text-white">
+            <span className="flex items-center gap-1.5 px-3 py-1 bg-card-alt border border-card-border rounded-full text-foreground">
               <Sparkles size={11} className="text-accent" /> Bespoke Hand-Coded
             </span>
-            <span className="flex items-center gap-1.5 px-3 py-1 bg-card-alt border border-card-border rounded-full text-white">
+            <span className="flex items-center gap-1.5 px-3 py-1 bg-card-alt border border-card-border rounded-full text-foreground">
               <Shield size={11} className="text-accent" /> 100% Secure DNS
             </span>
-            <span className="flex items-center gap-1.5 px-3 py-1 bg-card-alt border border-card-border rounded-full text-white">
+            <span className="flex items-center gap-1.5 px-3 py-1 bg-card-alt border border-card-border rounded-full text-foreground">
               <Flame size={11} className="text-accent" /> 95+ Core Vitals
             </span>
           </div>
