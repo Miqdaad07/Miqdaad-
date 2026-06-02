@@ -4,24 +4,24 @@ import { Quote, Star, ArrowUpRight } from 'lucide-react';
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "Miqdaad transformed our local outreach. He hand-coded a stunning, high-performance platform for our Islamic organization. It loads instantly and our donations increased by 40% in two months.",
-      author: "Abdur-Rahman Al-Farooq",
-      role: "Director, Al-Noor Community Hub",
-      project: "Islamic Community Hub Portal",
+      quote: "Miqdaad built a highly secure, integrated global donation portal and a custom-engineered Zakat calculator. The speed is spectacular, and his layout has significantly improved our donor onboarding and administration.",
+      author: "Dr. Abdullahi Shuaib",
+      role: "Founder, Abdullahi Shuaib Foundation",
+      project: "Abdullahi Shuaib Foundation (ASF)",
       rating: 5
     },
     {
-      quote: "We needed a ultra-fast custom application with strict zero-bloat standards. Miqdaad delivered a flawlessly engineered React ecosystem. The user response time is unmatched, and our conversion rate is at an all-time high.",
-      author: "Sarah Jenkins",
-      role: "VP of Product, NexaGlobal Systems",
-      project: "Enterprise Custom App Platform",
+      quote: "The spiritually calming emerald design aligns perfectly with our brand. Miqdaad hand-coded a modern academy ecosystem that streamlined our course directories and triggered immediate global student enrollments.",
+      author: "Ustaadh Abu Bakr",
+      role: "Founder, Halqatu-Najaah Academy",
+      project: "Halqatu-Najaah Online Qur’an Academy",
       rating: 5
     },
     {
-      quote: "Unbelievable speed and world-class design standards. He crafted an eye-safe, gorgeous glassmorphic web app that completely redefined our brand status among Fortune 500 partners.",
-      author: "Tariq Mahmood",
-      role: "Co-Founder, Apex Capital Ventures",
-      project: "Financial Advisory Platform",
+      quote: "He delivered a majestic, editorial digital experience that commands absolute trust. The layout grids and dark glassmorphic panels perfectly represent our private wealth advisory division.",
+      author: "Marcus Sterling",
+      role: "Managing Director, Sterling Advisory",
+      project: "Aure Wealth Advisory Platform",
       rating: 5
     }
   ];
