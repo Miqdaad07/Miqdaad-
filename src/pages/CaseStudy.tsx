@@ -128,6 +128,8 @@ export default function CaseStudy() {
               alt={project.title} 
               className="w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700"
               referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
         </div>

@@ -27,7 +27,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="py-28 px-4 md:px-8 bg-background relative overflow-hidden">
+    <section id="testimonials" className="py-20 px-4 md:px-8 bg-background relative overflow-hidden">
       {/* Dynamic background light flares */}
       <div className="absolute top-1/2 left-1/4 w-[350px] h-[350px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 

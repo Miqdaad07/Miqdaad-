@@ -66,10 +66,10 @@ export default function CTA() {
             <a
               href="#contact"
               onClick={handleScrollToContact}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-black font-bold uppercase text-[12px] tracking-[1.5px] rounded-full hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 shadow-[0_4px_20px_rgba(5,219,105,0.3)] hover:shadow-[0_4px_30px_rgba(5,219,105,0.5)] cursor-pointer"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white font-bold uppercase text-[12px] tracking-[1.5px] rounded-full hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 shadow-[0_4px_20px_rgba(5,219,105,0.3)] hover:shadow-[0_4px_30px_rgba(5,219,105,0.5)] cursor-pointer"
             >
               Initiate Project Inquiry
-              <ArrowRight size={14} className="text-black" />
+              <ArrowRight size={14} className="text-white" />
             </a>
           </div>
 

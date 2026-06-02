@@ -26,7 +26,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-28 px-4 md:px-8 bg-bg-deep relative overflow-hidden">
+    <section id="about" className="py-20 px-4 md:px-8 bg-bg-deep relative overflow-hidden">
       
       {/* Background gradients */}
       <div className="absolute top-1/4 -left-64 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />

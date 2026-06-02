@@ -41,7 +41,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="process" className="py-28 px-4 md:px-8 bg-bg-alt relative overflow-hidden">
+    <section id="process" className="py-20 px-4 md:px-8 bg-bg-alt relative overflow-hidden">
       {/* Decorative vertical background blur */}
       <div className="absolute right-0 top-1/4 w-[1px] h-1/2 bg-accent/30 blur-[2px]" />
       

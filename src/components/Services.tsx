@@ -42,7 +42,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-28 px-4 md:px-8 bg-bg-alt relative overflow-hidden">
+    <section id="services" className="py-20 px-4 md:px-8 bg-bg-alt relative overflow-hidden">
       {/* Background abstract overlay */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[140px] pointer-events-none" />
 

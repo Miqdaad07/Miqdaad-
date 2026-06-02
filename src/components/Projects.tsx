@@ -29,7 +29,7 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="py-28 px-4 md:px-8 bg-gradient-to-b from-background to-bg-deep">
+    <section id="projects" className="py-20 px-4 md:px-8 bg-gradient-to-b from-background to-bg-deep">
       <div className="container mx-auto max-w-6xl">
         
         {/* Header Section */}
@@ -100,6 +100,8 @@ export default function Projects() {
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       referrerPolicy="no-referrer"
+                      loading="lazy"
+                      decoding="async"
                     />
                     {/* Decorative Glass Overlay */}
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent dark:from-black/90 dark:via-black/50 dark:to-transparent opacity-90" />
