@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
     <footer className="py-10 px-4 md:px-8 border-t border-card-border/65 bg-bg-deep">
@@ -6,8 +8,8 @@ export default function Footer() {
           © {new Date().getFullYear()} <span className="text-foreground font-bold font-display">DAWODU <span className="text-accent">MIQDAAD</span></span>. All rights reserved.
         </p>
         <div className="flex items-center gap-6">
-          <a href="#" className="text-[10px] text-muted uppercase tracking-[1px] font-mono hover:text-accent transition-colors">Privacy Policy</a>
-          <a href="#" className="text-[10px] text-muted uppercase tracking-[1px] font-mono hover:text-accent transition-colors">Terms of Service</a>
+          <Link to="/privacy" className="text-[10px] text-muted uppercase tracking-[1px] font-mono hover:text-accent transition-colors">Privacy Policy</Link>
+          <Link to="/terms" className="text-[10px] text-muted uppercase tracking-[1px] font-mono hover:text-accent transition-colors">Terms of Service</Link>
         </div>
       </div>
     </footer>

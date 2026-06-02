@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import CaseStudy from './pages/CaseStudy';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -18,6 +20,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/case-study/:id" element={<CaseStudy />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
           </Routes>
         </main>
         <Footer />

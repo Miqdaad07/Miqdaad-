@@ -7,35 +7,35 @@ export default function Experience() {
       num: '01',
       title: 'Discovery & Deep System Audit',
       subtitle: 'Mapping Goals & Analytics',
-      desc: 'We analyze your current product, user metrics, and business benchmarks. Together, we draft a comprehensive technical roadmap, defining architecture stacks and conversion triggers to hit your exact business goals.',
+      desc: 'I analyze your current product, user metrics, and business benchmarks. Together, we draft a comprehensive technical roadmap, defining architecture stacks and conversion triggers to hit your exact business goals.',
       icon: <Compass size={18} className="text-accent" />
     },
     {
       num: '02',
       title: 'High-Fidelity Art Direction',
       subtitle: 'Luxury Interactive Prototyping',
-      desc: 'We craft bespoke visual identity assets, interactive typography rules, and modern glassmorphic UI systems. We avoid generic templates to project massive market authority and highlight your brand core values.',
+      desc: 'I craft bespoke visual identity assets, interactive typography rules, and modern glassmorphic UI systems. I avoid generic templates to project massive market authority and highlight your brand core values.',
       icon: <Palette size={18} className="text-accent" />
     },
     {
       num: '03',
       title: 'Bespoke Hand-Coded Development',
       subtitle: 'React & Next.js Modular Architecture',
-      desc: 'We write lightweight, zero-bloat TypeScript and clean Tailwind utility classes. No slow templates or heavy visual page builders. Your system is assembled cleanly to guarantee bulletproof scaling and clean codebases.',
+      desc: 'I write lightweight, zero-bloat TypeScript and clean Tailwind utility classes. No slow templates or heavy visual page builders. Your system is assembled cleanly to guarantee bulletproof scaling and clean codebases.',
       icon: <Code2 size={18} className="text-accent" />
     },
     {
       num: '04',
       title: 'Core Vitals Optimization',
       subtitle: 'Speed & SEO Acceleration Tuning',
-      desc: 'We compress media assets, fine-tune script injection, orchestrate strict lazy loading, and stress-test performance. This ensures perfect 100/100 Lighthouse scores, making your site rank higher and load instantly.',
+      desc: 'I compress media assets, fine-tune script injection, orchestrate strict lazy loading, and stress-test performance. This ensures perfect 100/100 Lighthouse scores, making your site rank higher and load instantly.',
       icon: <LineChart size={18} className="text-accent" />
     },
     {
       num: '05',
       title: 'Global Edge Deployment',
       subtitle: 'Securing DNS & Launch Support',
-      desc: 'We provision serverless CDN routes, configure automated backups, implement secure contact forms, and link client management tools. We launch with complete confidence and provide active support.',
+      desc: 'I provision serverless CDN routes, configure automated backups, implement secure contact forms, and link client management tools. I launch with complete confidence and provide active support.',
       icon: <Cpu size={18} className="text-accent" />
     },
   ];
@@ -54,13 +54,13 @@ export default function Experience() {
             <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.15em] font-bold">The Blueprint</span>
           </div>
           <h2 className="text-[32px] md:text-[45px] font-display font-extrabold text-foreground leading-tight">
-            Our Elite Digital <br />
+            My Elite Digital <br />
             <span className="text-accent bg-clip-text bg-gradient-to-r from-accent to-accent-hover dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-accent dark:to-emerald-400">
               Delivery Framework
             </span>
           </h2>
           <p className="text-muted text-[13px] md:text-[14px] leading-relaxed font-light">
-            We follow an engineering-guided methodology to ensure your product has class-leading speed, exceptional visual design, and perfect high-availability delivery.
+            I follow an engineering-guided methodology to ensure your product has class-leading speed, exceptional visual design, and perfect high-availability delivery.
           </p>
         </div>
 
